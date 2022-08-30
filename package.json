@@ -1,0 +1,20 @@
+{
+  "name": "backend-ecommerce-df",
+  "version": "1.0.0",
+  "description": "API for e-commerce",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wZacky/backend-ecommerce-DF.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wZacky/backend-ecommerce-DF/issues"
+  },
+  "homepage": "https://github.com/wZacky/backend-ecommerce-DF#readme"
+}
