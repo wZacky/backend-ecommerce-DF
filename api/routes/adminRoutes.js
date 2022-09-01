@@ -1,8 +1,9 @@
 import { Router } from "express";
 import { register } from "../controllers/authController.js";
-import { updateSellerById } from "../controllers/sellerController.js";
+import { deactivateSellerById, updateSellerById } from "../controllers/sellerController.js";
 import updateSellerValidator from "../middlewares/updateSellerValidator.js";
 import registerUserValidator from "../middlewares/registerUserValidator.js";
+import deactiveSellerValidator from "../middlewares/deactiveSellerValidator.js";
 
 const router = Router();
 
@@ -11,5 +12,6 @@ router.route('/user')
 
 router.route('/seller/:id')
   .put(updateSellerValidator, updateSellerById)
+  .delete(deactiveSellerValidator, deactivateSellerById);
 
 export default router;

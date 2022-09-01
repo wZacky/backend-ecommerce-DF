@@ -22,4 +22,22 @@ const updateSellerById = async (req, res) => {
   }
 }
 
-export {updateSellerById};
+const deactivateSellerById = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const sellerDeactivated = await User.findByIdAndUpdate(id, {isActive: false}, {new: true})
+
+    return res.json({
+      msg: 'Seller deactivated',
+      data: { sellerDeactivated },
+    })
+  } catch (error) {
+    return res.status(500).json({
+      msg: 'Error when deactivating seller',
+      error,
+    })
+  }
+}
+
+export { updateSellerById, deactivateSellerById };

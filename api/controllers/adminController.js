@@ -1,28 +1,31 @@
-/* import bcrypt from 'bcrypt';
-import { User } from "../models/User" */
+import bcrypt from 'bcrypt';
+import { User } from "../models/User.js"
 
-/* const registerAdmin = async (req, res) => {
+const registerSuperAdmin = async () => {
   try {
 
-    const {password} = req.body;
+    const superAdmin = await User.findOne({email: 'superadmin@gmail.com'});
 
-    const encryptedPassword = await bcrypt.hash(password, 3);
+    if (!superAdmin) {
+      const password = await bcrypt.hash('Adm1n!xy', 2);
 
-    const admin = req.body;
-    admin.password = encryptedPassword;
-    
-    await User.create(req.body);
+      await User.create({
+        firstName: 'Super',
+        lastName: 'Admin',
+        phoneNumber: '987123645',
+        email: 'superadmin@gmail.com',
+        password,
+        role: 'admin',
+      })
 
+      console.log('Super Admin registered');
+    }
 
-
-    return res.json({
-
-    })
-    
+    console.log('Super Admin already registered');
   } catch (error) {
-    return res.status(500).json({
-      msg: 'Error when registering admin',
-      error,
-    })
+    console.log(error);
   }
-} */
+}
+
+
+export { registerSuperAdmin };

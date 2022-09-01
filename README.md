@@ -22,7 +22,7 @@ API for e-commerce
 6. Compra(tiene User y Carrito)
 
 
---------Common data users-------
+--------Users common data-------
 Nombre
 Apellidos
 Telefono
