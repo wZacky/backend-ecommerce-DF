@@ -32,3 +32,6 @@ Contraseña
 
 psd:
 1234?6aZ
+
+admin psd:
+1111?7Ba

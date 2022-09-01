@@ -10,15 +10,42 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  deliveryAddress: String,
-  street: String,
-  exteriorNumber: Number,
-  interiorNumber: String,
-  betweenStreets: String,
-  city: String,
-  country: String,
-  zipCode: String,
-  references: String,
+  deliveryAddress: {
+    type: String,
+    default: '',
+  },
+  street: {
+    type: String,
+    default: '',
+  },
+  exteriorNumber: {
+    type: Number,
+    default: 0,
+  },
+  interiorNumber: {
+    type: String,
+    default: '',
+  },
+  betweenStreets: {
+    type: String,
+    default: '',
+  },
+  city: {
+    type: String,
+    default: '',
+  },
+  country: {
+    type: String,
+    default: '',
+  },
+  zipCode: {
+    type: String,
+    default: '',
+  },
+  references: {
+    type: String,
+    default: '',
+  },
   email: {
     type: String,
     unique: true,
@@ -33,11 +60,12 @@ const userSchema = mongoose.Schema({
   phoneNumber: {
     type: String,
     match: /^\d{9}$/,
+    required: true,
   },
   personalContacts: [String],
   role: {
     type: String,
-    enum: ['customer','seller','admin']
+    enum: ['customer','seller','admin'],
   }
 })
 

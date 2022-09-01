@@ -13,18 +13,12 @@ const register = async (req, res) => {
   user.password = undefined;
 
   return res.json({
-    msg: 'Registered Customer',
+    msg: 'Registered User',
     data: { user }
   })
   } catch (error) {
-    if (error.code = 11000) {
-      return res.status(500).json({
-        msg: `The email ${error.keyValue.email} has been previously registered`,
-      })
-    }
-
     return res.status(500).json({
-      msg: 'Error when registering Customer',
+      msg: 'Error when registering User',
       error,
     })
   }
