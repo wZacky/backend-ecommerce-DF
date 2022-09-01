@@ -1,5 +1,6 @@
 import Joi from 'joi';
 
+// Valida el req.body en el registro de usuarios tipo admin y seller:
 const registerAdminSchema = Joi.object({
   firstName: Joi.string(),
   lastName: Joi.string(),

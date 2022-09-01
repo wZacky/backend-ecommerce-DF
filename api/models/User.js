@@ -66,7 +66,12 @@ const userSchema = mongoose.Schema({
   role: {
     type: String,
     enum: ['customer','seller','admin'],
-  }
+  },
+  isActive: {
+    type: Boolean,
+    default: true,
+    required: true,
+  },
 })
 
 const User = mongoose.model('User', userSchema);

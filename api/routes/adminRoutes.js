@@ -1,10 +1,15 @@
 import { Router } from "express";
-import registerAdminValidator from "../middlewares/registerAdminValidator.js";
 import { register } from "../controllers/authController.js";
+import { updateSellerById } from "../controllers/sellerController.js";
+import updateSellerValidator from "../middlewares/updateSellerValidator.js";
+import registerUserValidator from "../middlewares/registerUserValidator.js";
 
 const router = Router();
 
-router.route('/adminRegister')
-  .post(registerAdminValidator, register);
+router.route('/user')
+  .post(registerUserValidator, register);
+
+router.route('/seller/:id')
+  .put(updateSellerValidator, updateSellerById)
 
 export default router;

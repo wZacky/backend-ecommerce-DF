@@ -35,3 +35,11 @@ psd:
 
 admin psd:
 1111?7Ba
+
+pepe:
+2222?8cD
+
+Buscar: como validar un json erroneo: con generic error handler en express
+
+token de admin caducado:
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiI2MzEwMjJiYzJjMDE3ODIwODJmMzcxZGIiLCJyb2xlIjoiYWRtaW4iLCJleHBpcmF0aW9uVG9rZW5EYXRlIjoiMjAyMi0wOS0wMVQxNjoyNzowOS45OTNaIn0.IadwxQU-CSJm4VDsd09Nvvztc3Ptj_54U7rD1IWGBiA
