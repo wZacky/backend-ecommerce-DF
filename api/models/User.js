@@ -2,24 +2,33 @@ import mongoose from "mongoose";
 
 
 const userSchema = mongoose.Schema({
-  firstName: String,
-  lastName: String,
+  firstName: {
+    type: String,
+    required: true,
+  },
+  lastName: {
+    type: String,
+    required: true,
+  },
   deliveryAddress: String,
   street: String,
   exteriorNumber: Number,
-  interiorNumber: Number,
+  interiorNumber: String,
   betweenStreets: String,
   city: String,
   country: String,
   zipCode: String,
   references: String,
-  mail: {
+  email: {
     type: String,
-    match: /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+    unique: true,
+    match: /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/,
+    required: true,
   },
   password: {
     type: String,
-    match: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
+    //match: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+    required: true,
   },
   phoneNumber: {
     type: String,
@@ -28,7 +37,7 @@ const userSchema = mongoose.Schema({
   personalContacts: [String],
   role: {
     type: String,
-    enum: ['Customer','Seller','Admin']
+    enum: ['customer','seller','admin']
   }
 })
 

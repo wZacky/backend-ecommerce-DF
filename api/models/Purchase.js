@@ -8,7 +8,11 @@ const purchaseSchema = Schema({
   user: {
     type: Schema.Types.ObjectId,
     ref: 'User',
-  }
+  },
+  paymentDate: {
+    type: Date,
+    default: null,
+  },
 })
 
 export default mongoose.model('Purchase', purchaseSchema);

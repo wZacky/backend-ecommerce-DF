@@ -2,10 +2,6 @@ import mongoose, { Schema } from 'mongoose';
 
 
 const shopingCartSchema = Schema({
-  paymentDate: {
-    type: Date,
-    default: null,
-  },
   items: [
     {
       item: {

@@ -1,4 +1,5 @@
 import express from 'express';
+import authRoutes from './routes/authRoutes.js';
 
 const api = express();
 
@@ -9,5 +10,7 @@ api.get('/status', (req, res) => {
     msg: 'API up',
   })
 })
+
+api.use(authRoutes);
 
 export default api;

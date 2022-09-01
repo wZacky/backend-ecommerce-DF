@@ -20,3 +20,15 @@ API for e-commerce
 4. Producto(tiene Categoria)
 5. Categoria
 6. Compra(tiene User y Carrito)
+
+
+--------Common data users-------
+Nombre
+Apellidos
+Telefono
+Correo
+Contraseña
+
+
+psd:
+1234?6aZ
