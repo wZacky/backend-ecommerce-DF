@@ -1,6 +1,6 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose from "mongoose";
 
-const couponSchema = Schema({
+const couponSchema = mongoose.Schema({
   name: String,
   isActive: Boolean,
 })

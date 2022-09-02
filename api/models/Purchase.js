@@ -1,12 +1,12 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose from "mongoose";
 
-const purchaseSchema = Schema({
+const purchaseSchema = mongoose.Schema({
   shoppingCart: {
     type: Schema.Types.ObjectId,
     ref: 'ShoppingCart',
   },
   user: {
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
   },
   paymentDate: {

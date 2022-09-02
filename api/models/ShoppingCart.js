@@ -1,7 +1,7 @@
-import mongoose, { Schema } from 'mongoose';
+import mongoose from 'mongoose';
 
 
-const shopingCartSchema = Schema({
+const shopingCartSchema = mongoose.Schema({
   items: [
     {
       item: {
@@ -12,7 +12,7 @@ const shopingCartSchema = Schema({
     }
   ],
   coupon: {
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'Coupon',
   },
   /* discountedTotal: {

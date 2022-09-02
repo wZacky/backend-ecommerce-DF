@@ -1,13 +1,14 @@
 import bcrypt from 'bcrypt';
 import { User } from "../models/User.js"
+import config from '../config/index.js';
 
 const registerSuperAdmin = async () => {
   try {
 
-    const superAdmin = await User.findOne({email: 'superadmin@gmail.com'});
+    const superAdmin = await User.findOne({email: config.superAdmin.email});
 
     if (!superAdmin) {
-      const password = await bcrypt.hash('Adm1n!xy', 2);
+      const password = await bcrypt.hash(config.superAdmin.password, 2);
 
       await User.create({
         firstName: 'Super',
