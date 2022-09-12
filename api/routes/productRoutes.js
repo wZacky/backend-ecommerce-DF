@@ -2,7 +2,7 @@ import { Router } from "express";
 import { deactivateProductById, getAllProducts, registerProduct, updateProductById } from "../controllers/productController.js";
 import { isSellerAuth } from "../middlewares/authSellerValidator.js";
 import createProductValidator from "../middlewares/createProductValidator.js";
-import deactiveProductValidator from "../middlewares/deactiveProductValidator.js";
+import deactivateProductValidator from "../middlewares/deactivateProductValidator.js";
 import updateProductValidator from "../middlewares/updateProductValidator.js";
 
 const router = Router();
@@ -13,6 +13,6 @@ router.route('/')
 
 router.route('/:id')
   .put(isSellerAuth, updateProductValidator, updateProductById)
-  .delete(isSellerAuth, deactiveProductValidator, deactivateProductById)
+  .delete(isSellerAuth, deactivateProductValidator, deactivateProductById)
 
 export default router;
