@@ -56,4 +56,23 @@ const updateProductById = async (req, res) => {
   }
 }
 
-export { registerProduct, getAllProducts, updateProductById };
+const deactivateProductById = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const deactivatedProduct = await Product.findByIdAndUpdate(id, {isActive: false}, {new: true});
+
+    return res.json({
+      msg: 'Product deactivated',
+      data: { deactivatedProduct }
+    })
+
+  } catch (error) {
+    return res.status(500).json({
+      msg: 'Error when deactivating product',
+      error,
+    })
+  }
+}
+
+export { registerProduct, getAllProducts, updateProductById, deactivateProductById };
