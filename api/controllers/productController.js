@@ -33,5 +33,27 @@ const getAllProducts = async (req, res) => {
   }
 }
 
+const updateProductById = async (req, res) => {
+  try {
+    const { id } = req.params;
 
-export { registerProduct, getAllProducts };
+    const updatedProduct = await Product.findByIdAndUpdate(id, req.body, {new: true})
+
+    /* if (!product) {
+      return res.status(404).json({
+        msg: 'Product inexistenting'
+      })
+    } */
+    return res.json({
+      msg: 'Product updated',
+      data: { updatedProduct }
+    })
+  } catch (error) {
+    return res.status(500).json({
+      msg: 'Error when updating',
+      error,
+    })
+  }
+}
+
+export { registerProduct, getAllProducts, updateProductById };
